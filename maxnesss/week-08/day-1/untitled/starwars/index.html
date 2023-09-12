@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Starwars search</title>
+</head>
+<main>
+    <div class="container">
+        <div class="search">
+            <div class="form">
+                <form>
+                    <label for="search_input">Enter character name:</label>
+                    <input type="search" name="search" id="search_input">
+                    <button id="submit_btn">search</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="results">
+            <div class="lista">
+                <ul></ul>
+
+            </div>
+            <div class="listb">
+                <ul></ul>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+<script>
+    const btn = document.querySelector("#submit_btn");
+    const textField = document.querySelector("#search_input");
+    const listA = document.querySelector(".lista ul")
+    const listb = document.querySelector(".listb ul")
+
+
+    function init() {
+
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            listA.innerHTML = "";
+            let input = textField.value;
+
+            fetch("https://swapi.dev/api/people/?search=" + input)
+                .then(response => response.json())
+                .then(data => {
+                    data.results.forEach(p=>{
+                        console.log(p)
+                        let li = document.createElement("li");
+                        li.addEventListener("click",() => {
+                            listb.innerHTML = "";
+                            p.films.forEach(f=>{
+                                let li = document.createElement("li")
+                                let a = document.createElement("a");
+                                a.innerText = f;
+                                a.href = f;
+                                li.appendChild(a)
+                                listb.appendChild(li);
+                            })
+                        })
+                        li.innerText = p.name;
+                        listA.appendChild(li);
+                    })
+                });
+        });
+    }
+    init();
+
+</script>
+<body>
+
+</body>
+</html>

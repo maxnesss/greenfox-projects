@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h2>Movie selector</h2>
+  <select name="genre" id="genre" onchange=checkGenre()>
+    <option value="" disabled selected>Select a genre</option>
+    <option value="scifi">Sci-fi</option>
+    <option value="drama">Drama</option>
+    <option value ="comedy">Comedy</option>
+  </select>
+  <select name="movies" id="movies" onchange=writeMovieName()>
+    <option value="" disabled selected>Select a movie</option>
+      <option class="scifi" hidden value="Moon">Moon</option>
+      <option class="scifi" hidden value="2001: A Space Odyssey">2001: A Space Odyssey</option>
+      <option class="scifi" hidden value="Contact">Contact</option>
+      <option class="drama" hidden value="Darkest Hour">Darkest Hour</option>
+      <option class="drama" hidden value="There Will Be Blood">There Will Be Blood</option>
+      <option class="drama" hidden value="American Beauty">American Beauty</option>
+      <option class="comedy" hidden value="Airplane!">Airplane!</option>
+      <option class="comedy" hidden value="Deadpool">Deadpool</option>
+      <option class="comedy" hidden value="Wayne's World">Wayne's World</option>
+  </select>
+  <p class="selectedMovie">The selected movie is: <span class="movie">-</span> </p>
+</div>
+
+<script>
+  const genre = document.querySelector("#genre");
+  const movies = document.querySelector("#movies");
+  const movieName= document.querySelector(".selectedMovie .movie");
+
+  function checkGenre(){
+    document.querySelectorAll("#movies option").forEach((item)=>item.hidden =true);
+    if (genre.value==="scifi"){
+      document.querySelectorAll("select .scifi").forEach((item)=>item.hidden = false);
+    }
+    if (genre.value==="drama"){
+      document.querySelectorAll("select .drama").forEach((item)=>item.hidden = false);
+    }
+    if (genre.value==="comedy"){
+      document.querySelectorAll("select .comedy").forEach((item)=>item.hidden = false);
+    }
+  }
+  function writeMovieName(){
+    movieName.textContent = movies.value;
+  }
+
+</script>
+</body>
+</html>

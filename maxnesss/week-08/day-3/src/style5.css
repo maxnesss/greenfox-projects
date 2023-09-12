@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+.container {
+    width: 760px;
+    height: 100vh;
+    margin: 0 auto;
+}
+.purple {
+    background-color: purple;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.magenta {
+    background-color: aqua;
+    height: 30px;
+    width: 100px;
+    margin: 20px;
+
+}
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+.yellow {
+    background-color: yellow;
+    height: 100%;
+    width: 80%;
+
+}
+.green {
+    background-color: green;
+    height: 100%;
+    width: 20%;
+}

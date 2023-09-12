@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delayed Click</title>
+</head>
+<body>
+<button>Click me, if you dare!</button>
+<p>-</p>
+<script>
+    const btn = document.querySelector("button");
+    const text = document.querySelector("p");
+
+    btn.addEventListener("click", ()=>{
+        setTimeout(()=>{text.innerText = "clicked"},3000);
+
+    })
+</script>
+</body>
+</html>

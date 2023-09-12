@@ -1,0 +1,2 @@
+rm -rf exam/data.txt program/data.txt
+mv program/assets/* exam/images/

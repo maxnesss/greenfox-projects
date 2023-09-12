@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Random image background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      background-size: cover;
+      background-position: center center;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // 1: Create a function that updates the <body> elements background-image's css property
+
+  const body = document.querySelector("body");
+  var imageUrl = "https://loremflickr.com/g/1280/800/hungary/";
+
+  function refreshImage() {
+    var timestamp = new Date().getTime(); // Generate a unique timestamp
+
+    // Append the timestamp as a query parameter to the image URL
+    var urlWithCacheBuster = imageUrl + "?t=" + timestamp;
+
+    body.style.backgroundImage = "url('" + urlWithCacheBuster + "')";
+  }
+
+  refreshImage();
+
+  setInterval(refreshImage, 5000);
+
+
+</script>
+</body>
+</html>

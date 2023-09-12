@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: CreateElement</title>
+  </head>
+  <body>
+    <ul class="asteroids">
+      <li id="b325" class="asteroid">The King</li>
+      <li class="asteroid b326">The Conceited Man</li>
+    </ul>
+    <div class="container"></div>
+
+ 
+
+    <script>
+    //   Add an item that says 'The Green Fox' to the asteroid list.
+    let listAsteroids = document.querySelector("ul.asteroids");
+    let gfAsteroid = document.createElement("li");
+    gfAsteroid.innerText = "The Green Fox";
+
+    listAsteroids.appendChild(gfAsteroid);
+
+
+
+    //   Add an item that says 'The Lamplighter' to the asteroid list.
+    let lamplighter = document.createElement("li");
+    lamplighter.innerText = "The Lamplighter";
+    listAsteroids.appendChild(lamplighter);
+
+    //   Add a heading saying 'I can add elements to the DOM!' to the .container.
+    let container = document.querySelector(".container");
+    let heading = document.createElement("h2");
+    heading.innerText = "I can add elements to the DOM!";
+    container.appendChild(heading);
+
+    //   Add an image, any image, to the container.
+    let img = document.createElement("img");
+    img.setAttribute("src", "https://images.unsplash.com/photo-1683248325574-6b1755832812?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+    container.appendChild(img);
+    </script>
+
+  </body>
+</html>

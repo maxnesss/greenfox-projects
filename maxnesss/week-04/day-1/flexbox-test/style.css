@@ -1,0 +1,51 @@
+.one {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.two {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+.three {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+.four{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+.five{
+    width: 100px;
+    height: 100px;
+    background-color: violet;
+}
+.six{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+.seven{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+.eight{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+.nine{
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+}

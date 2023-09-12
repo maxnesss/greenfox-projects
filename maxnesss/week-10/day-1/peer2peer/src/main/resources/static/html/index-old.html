@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P2PC</title>
+</head>
+<body>
+<h1>P2P Chat Program</h1>
+<ul>
+    <li>
+        <p>App</p>
+        <p>Hi there! Submit your messages here.</p>
+    </li>
+</ul>
+<form>
+    <label for="message"></label>
+    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    <button type="submit">Send</button>
+</form>
+<p><a href="/">refresh</a> </p>
+<script>
+    async function fillData() {
+        await fetch("/api/message").then(promise => promise.json()).then(data => data.forEach(el => {
+            let ul = document.querySelector("ul");
+            let message = document.createElement("li");
+            let userText = document.createElement("p");
+            let messageText = document.createElement("p");
+
+            userText.textContent = el.username;
+            messageText.textContent = el.text;
+            message.appendChild(userText);
+            message.appendChild(messageText);
+            ul.appendChild(message);
+        }));
+    }
+    fillData();
+    let form = document.forms[0];
+    let input = document.querySelector("#message");
+    form.addEventListener("submit",ev => {
+        ev.preventDefault();
+
+        fetch("http://localhost:8080/api/message/add",{
+            method:"POST",
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(
+                {
+                    "message": {
+                        "username": "Max",
+                        "text": input.value
+                    },
+                    "client": {
+                        "id": "Max"
+                    }
+                }
+            )
+        })
+        location.href = "/";
+
+    })
+</script>
+</body>
+</html>

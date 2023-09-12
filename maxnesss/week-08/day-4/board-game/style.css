@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-gap: 2px;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(7,1fr);
+
+    grid-template-areas:
+            "yellow1 yellow2 yellow3 yellow4 yellow5 yellow6 yellow7"
+            "yellow8 green green green green green yellow9"
+            "yellow10 green green green green green yellow11"
+            "yellow12 green green green green green yellow13"
+            "yellow14 green green green green green yellow15"
+            "yellow16 yellow17 yellow18 yellow19 yellow20 yellow21 yellow22";
+}
+
+
+.green{
+    background-color: green;
+    box-shadow: inset 0 0 20px black;
+    grid-area: green;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 20px;
+    grid-template-areas: ". . ." ". cards ." ". . .";
+}
+.cards{
+    grid-area: cards;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards span{
+    color: white;
+    font-size: 35px;
+}
+.yellow1 {
+    grid-area: yellow1;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.yellow1 span{
+    rotate: -45deg;
+    font-size: 30px;
+}
+
+.yellow2 {
+    grid-area: yellow2;
+    background-color: yellow;
+}
+
+.yellow3 {
+    grid-area: yellow3;
+    background-color: yellow;
+}
+
+.yellow4 {
+    grid-area: yellow4;
+    background-color: yellow;
+}
+
+.yellow5 {
+    grid-area: yellow5;
+    background-color: yellow;
+}
+
+.yellow6 {
+    grid-area: yellow6;
+    background-color: yellow;
+}
+
+.yellow7 {
+    grid-area: yellow7;
+    background-color: yellow;
+}
+
+.yellow8 {
+    grid-area: yellow8;
+    background-color: yellow;
+}
+
+.yellow9 {
+    grid-area: yellow9;
+    background-color: yellow;
+}
+
+.yellow10 {
+    grid-area: yellow10;
+    background-color: yellow;
+}
+
+.yellow11 {
+    grid-area: yellow11;
+    background-color: yellow;
+}
+
+.yellow12 {
+    grid-area: yellow12;
+    background-color: yellow;
+}
+
+.yellow13 {
+    grid-area: yellow13;
+    background-color: yellow;
+}
+
+.yellow14 {
+    grid-area: yellow14;
+    background-color: yellow;
+}
+
+.yellow15 {
+    grid-area: yellow15;
+    background-color: yellow;
+}
+
+.yellow16 {
+    grid-area: yellow16;
+    background-color: yellow;
+}
+
+.yellow17 {
+    grid-area: yellow17;
+    background-color: yellow;
+}
+
+.yellow18 {
+    grid-area: yellow18;
+    background-color: yellow;
+}
+
+.yellow19 {
+    grid-area: yellow19;
+    background-color: yellow;
+}
+
+.yellow20 {
+    grid-area: yellow20;
+    background-color: yellow;
+}
+
+.yellow21 {
+    grid-area: yellow21;
+    background-color: yellow;
+}
+
+.yellow22 {
+    grid-area: yellow22;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.yellow22 span {
+    rotate: -45deg;
+    font-size: 30px;
+
+}

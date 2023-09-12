@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Note</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .note {
+            width: 250px;
+            height: 350px;
+            border: 1px solid black;
+            margin: 30px;
+            display: grid;
+            grid-template-rows: 40px 250px 30px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "title title" "content content" ". remove";
+        }
+
+        .title {
+            grid-area: title;
+        }
+
+        .content {
+            grid-area: content;
+
+        }
+
+        .remove {
+            grid-area: remove;
+
+        }
+    </style>
+</head>
+<body>
+<header>
+    <button type="button" id="idBtn">ALL</button>
+    <button type="button" id="shoppingBtn">Shopping Lists</button>
+    <button type="button" id="reminderBtn">Reminders</button>
+    <button type="button" id="motivationBtn">Motivations</button>
+</header>
+<main>
+    <div class="note">
+        <div class="title">
+            <p>title</p>
+
+        </div>
+        <div class="content">
+            <p>Content</p>
+        </div>
+        <div class="remove">
+            <button type="button">remove</button>
+        </div>
+
+    </div>
+    <script>
+        const idBtn = document.querySelector("#idBtn");
+        const shoppingBtn = document.querySelector("#shoppingBtn");
+        const reminderBtn = document.querySelector("#reminderBtn");
+        const motivationBtn = document.querySelector("#motivationBtn");
+        const main = document.querySelector("main");
+
+        displayAll();
+
+        idBtn.addEventListener("click", () => {
+            main.innerHTML = "";
+            displayAll();
+        })
+
+        function displayAll() {
+            fetch("api/notes")
+                .then(response => response.json())
+                .then(d => d.forEach(el => {
+                    console.log(el);
+                    const note = document.createElement("div");
+                    note.classList.add("note");
+                    const titleDiv = document.createElement("div");
+                    titleDiv.classList.add("title");
+                    const contentDiv = document.createElement("div");
+                    contentDiv.classList.add("content");
+                    const removeDiv = document.createElement("div");
+                    removeDiv.classList.add("remove");
+
+
+                    const titleText = document.createElement("p");
+                    titleText.textContent = el.title;
+                    const contentText = document.createElement("p");
+                    contentText.textContent = el.content;
+                    const rmBtn = document.createElement("button");
+                    rmBtn.textContent = "remove";
+
+                    removeDiv.appendChild(rmBtn);
+                    contentDiv.appendChild(contentText);
+                    titleDiv.appendChild(titleText);
+
+
+                    note.appendChild(removeDiv);
+                    note.appendChild(contentDiv);
+                    note.appendChild(titleDiv);
+                    main.appendChild(note);
+                })).
+        }
+    </script>
+</main>
+
+</body>
+</html>

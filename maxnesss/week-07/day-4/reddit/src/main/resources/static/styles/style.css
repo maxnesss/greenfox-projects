@@ -1,0 +1,129 @@
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeaea;
+
+}
+header{
+    background-image: url("../assets/photo.webp");
+    width: 100%;
+    height: 350px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #252424;
+    letter-spacing: 0.3em;
+    font-size: 50px;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+
+}
+header a{
+    text-decoration: none;
+    color: #252424;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "posts aside";
+    grid-gap: 10px;
+    margin: 10px;
+}
+.posts{
+    grid-area: posts;
+}
+.aside{
+    margin-top: 10px;
+    background-color: white;
+    grid-area: aside;
+    min-height: 450px;
+    max-height: 650px;
+}
+.post{
+    background-color: white;
+
+
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.votes{
+    display: flex;
+    flex-direction: column;
+    width: 15px;
+    padding: 40px;
+}
+.votes span{
+    display: flex;
+    justify-content: center
+}
+.title{
+    font-weight: bolder;
+    font-size: 25px;
+}
+.bottom-text{
+    font-size: 12px;
+}
+.button a, form button{
+    border: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6c7dee;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.2em;
+    font-size: 20px;
+}
+.info{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+
+}
+hr{
+    width: 30%;
+}
+#login{
+    position: fixed;
+    right: 30px;
+    top: 0;
+    font-weight: bolder;
+    font-size: 25px;
+    color: rgba(51, 54, 66, 0.66);
+    letter-spacing: 0.1em;
+    text-shadow: none;
+}
+/*.post{*/
+/*    display: none;*/
+/*}*/
+/*add post*/
+form{
+    width: 100%;
+    font-weight: bold;
+    padding: 10px;
+}
+#title,#url,#username,#password{
+    display: block;
+    width: 100%;
+    height: 85px;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: #eeeaea;
+    border: 1px solid #918f8f;
+    margin: 4px 0 20px 0;
+}
+#url{
+    height: 50px;
+    font-size: 25px;
+    font-weight: normal;
+}
+.hidden{
+    display: none;
+}

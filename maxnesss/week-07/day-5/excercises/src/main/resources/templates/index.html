@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Excercises</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body th:style="'background-color: '+${color}">
+<div class="container">
+    <div class="con2">
+        <div class="button one">
+            <a href="/useful">useful</a>
+        </div>
+        <div class="button two">
+            <a href="/useful/colored">colors</a>
+        </div>
+        <div class="button three">
+            <a href="/useful/email?email=mx@google.com">mx@google.com</a>
+            <a th:text="${email}" href="#"></a>
+        </div>
+        <div class="button three">
+            <a href="/useful/email?email=mxole.com">mxole.com</a>
+            <a th:text="${email}" href="#"></a>
+        </div>
+    </div>
+    <div class="con3">
+        <p th:text="${code}"></p>
+    </div>
+</div>
+
+
+</body>
+</html>

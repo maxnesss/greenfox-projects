@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <title>MaxMart</title>
+</head>
+<body>
+<div class="top-line"></div>
+<div class="container">
+    <header>
+        <div class="logo">
+            <h1><a href="/webshop">MaxMart</a></h1>
+        </div>
+        <nav>
+            <a href="/only-available">ONLY AVAILABLE</a>
+            <a href="/cheapest-first">CHEAPEST FIRST</a>
+            <a href="/contains-nike">CONTAINS NIKE</a>
+            <a href="/average-stock">AVERAGE STOCK</a>
+            <a href="/most-expensive">MOST EXPENSIVE AVAILABLE</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <p class="search-text">Search for:</p>
+            <div class="search">
+                <form class="search" action="/search" method="post">
+                    <input type="search" name="search" id="search" placeholder="What'ya looking for?" />
+                    <input type="submit" value="submit" id="searchBtn">
+                </form>
+            </div>
+
+        </section>
+        <section>
+            <table th:if="${items}">
+                <tr>
+                    <th class="name">name</th>
+                    <th class="description">description</th>
+                    <th class="price">price</th>
+                    <th class="qty">quantity of stock</th>
+                </tr>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.getName()}" class="table-name"></td>
+                    <td th:text="${item.getDescription()}"></td>
+                    <td th:text="${item.getPrice()} +' CZK'"></td>
+                    <td th:text="${item.getQuantityOfStock()}"></td>
+                </tr>
+            </table>
+            <div class="average" th:if="${average}">
+                <p th:text="'Average stock: '+${average}" ></p>
+
+            </div>
+
+        </section>
+    </main>
+</div>
+<footer>
+    <p>POWERED by MAX</p>
+</footer>
+</body>
+</html>

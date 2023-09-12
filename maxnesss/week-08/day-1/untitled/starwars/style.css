@@ -1,0 +1,36 @@
+body {
+    font-family: sans-serif;
+}
+main {
+    display: flex;
+    justify-content: center;
+
+}
+label {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 70%;
+    height: 100vh;
+    margin: 100px;
+}
+#submit_btn {
+    height: 35px;
+    border-radius: 10%;
+}
+#search_input {
+    width: 50%;
+    height: 35px;
+    border-radius: 3%;
+}
+.results{
+    display: flex;
+
+}
+.lista, .listb {
+    width: 40%;
+}
+

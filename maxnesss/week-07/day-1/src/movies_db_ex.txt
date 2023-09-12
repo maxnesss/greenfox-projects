@@ -1,0 +1,30 @@
+Ex 1
+
+select title from movie where director like '%spielberg';
+
+Ex 2
+
+select DISTINCT year from movie
+inner join rating on movie.mid=rating.mid
+where stars >=4
+order by year asc;
+
+Ex 3
+
+select title from movie
+left join rating on movie.mid=rating.mid
+where rid is null;
+
+Ex 4
+
+select reviewer.name from movie
+left join rating on movie.mid=rating.mid
+inner join reviewer on rating.rid = reviewer.rid
+where ratingDate is null;
+
+Ex 5
+
+select reviewer.name, movie.title, rating.stars, rating.ratingdate from movie
+left join rating on movie.mid=rating.mid
+inner join reviewer on rating.rid = reviewer.rid;
+

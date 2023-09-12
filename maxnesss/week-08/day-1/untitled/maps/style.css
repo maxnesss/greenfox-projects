@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#btn {
+    margin-left: 30px;
+    height: 96px;
+    width: 130px;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: serif;
+    border: black solid;
+    font-size: 18px;
+    color: #656464;
+}
+#input {
+    height: 90px;
+    width: 290px;
+    font-size: 40px;
+    border: black solid;
+}
+.items {
+    display: flex;
+}

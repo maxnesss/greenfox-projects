@@ -1,0 +1,21 @@
+.item {
+    height: 100px;
+    width: 100px;
+}
+.green {
+    background-color: green;
+}
+.yellow {
+    background-color: yellow;
+    width: 200px;
+}
+.purple {
+    background-color: purple;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}

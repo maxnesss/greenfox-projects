@@ -1,0 +1,32 @@
+document.getElementByClassName("");
+- gets array, i guess if more
+myContentDivs = document.getElementByClassName("content");
+
+.getElementByTagName
+
+
+Finding HTML elements by id   -!!
+Finding HTML elements by tag name
+Finding HTML elements by class name
+Finding HTML elements by CSS selectors - query selector -  first one
+                                        -query sellecter all -all -array
+Finding HTML elements by HTML object collections
+
+
+.innerHtml -gets html code
+.textContent - gets the text
+.getAttribute -gets attribute
+.setAttribute - sets attribute
+            ("which ont", "to what")
+
+
+.style
+
+.createElement
+.appendChildId
+.insertBefore(what, before what)
+
+parent
+child
+
+.removeChild()
